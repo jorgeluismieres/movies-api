@@ -1,0 +1,231 @@
+{
+  "info": {
+    "name": "Movies API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            ""
+          ]
+        }
+      }
+    },
+    {
+      "name": "Genres",
+      "item": [
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/genres",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "genres"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Suspenso\"}"
+            },
+            "url": {
+              "raw": "{{base_url}}/genres",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "genres"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Actors",
+      "item": [
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/actors",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "actors"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"first_name\": \"Tom\", \"last_name\": \"Hanks\", \"nationality\": \"EEUU\", \"image\": \"\", \"birthday\": \"1956-07-09\"}"
+            },
+            "url": {
+              "raw": "{{base_url}}/actors",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "actors"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Directors",
+      "item": [
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/directors",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "directors"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"first_name\": \"Denis\", \"last_name\": \"Villeneuve\", \"nationality\": \"Canad\\u00e1\", \"image\": \"\", \"birthday\": \"1967-10-03\"}"
+            },
+            "url": {
+              "raw": "{{base_url}}/directors",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "directors"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Movies",
+      "item": [
+        {
+          "name": "List (with relations)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/movies",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "movies"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"Interstellar\", \"image\": \"\", \"synopsis\": \"Viaje interestelar.\", \"release_year\": 2014}"
+            },
+            "url": {
+              "raw": "{{base_url}}/movies",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "movies"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Attach genres to movie 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "[1, 2]"
+            },
+            "url": {
+              "raw": "{{base_url}}/movies/1/genres",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "movies",
+                "1",
+                "genres"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
